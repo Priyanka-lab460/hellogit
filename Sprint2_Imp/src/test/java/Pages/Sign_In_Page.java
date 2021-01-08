@@ -38,7 +38,7 @@ public class Sign_In_Page {
 	}
 	public void clicksignin1() throws InterruptedException {
 		driver.findElement(signin1).click();
-    	Thread.sleep(1000);
+    	Thread.sleep(3000);
 	}
 	public void clickforpass() throws InterruptedException {
 		WebElement iframeElement = driver.findElement(frame);
@@ -82,9 +82,14 @@ public class Sign_In_Page {
     	driver.findElement(email).sendKeys("a");
     	Thread.sleep(1000);
 	}
+	public void entervalidemail(String Email) throws InterruptedException {
+		driver.findElement(email).clear();
+    	driver.findElement(email).sendKeys(Email);
+    	Thread.sleep(1000);
+	}
 	public void entervalidnotregisteredemail() throws InterruptedException {
 		driver.findElement(email).clear();
-    	driver.findElement(email).sendKeys("atrey@gmail.com");
+    	driver.findElement(email).sendKeys("aty@gmail.com");
     	Thread.sleep(1000);
 	}
 	public void enterinvalidpass() throws InterruptedException {
@@ -92,10 +97,15 @@ public class Sign_In_Page {
     	driver.findElement(pass).sendKeys("mnbv");
     	Thread.sleep(1000);
 	}
+	public void entervalidpass(String password) throws InterruptedException {
+		driver.findElement(pass).clear();
+    	driver.findElement(pass).sendKeys(password);
+    	Thread.sleep(1000);
+	}
 	public void enterpassgreater40() throws InterruptedException {
 		driver.findElement(pass).clear();
     	driver.findElement(pass).sendKeys("111111111111111111111111111111111111111111111111111");
-    	Thread.sleep(1000);
+    	Thread.sleep(500);
 	}
 	
 	public String verifye1() throws InterruptedException {
@@ -110,9 +120,9 @@ public class Sign_In_Page {
     	String act=driver.findElement(e3).getText();
     	return act;
 	}
-	public String verifye4() throws InterruptedException {
+	/*public String verifye4() throws InterruptedException {
     	String act=driver.findElement(e4).getText();
     	return act;
-	}
+	}*/
 
 }

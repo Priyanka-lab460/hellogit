@@ -29,7 +29,7 @@ public class Sprint2_stepdefination1 {
 		driver.close();
 	}
 	@Before
-	    public void user_open_the_web_page_in_the_browser() throws Throwable {
+	    public void setup() throws Throwable {
 			 System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
 				driver=new ChromeDriver();
 				driver.manage().window().maximize();
@@ -116,18 +116,18 @@ public class Sprint2_stepdefination1 {
 	    	System.out.println(act);
 	    	driver.switchTo().defaultContent();
 	    }
-	    @Then("^User verify the error message 4$")
+	    /*@Then("^User verify the error message 4$")
 	    public void user_verify_the_error_message_4() throws Throwable {
-	    	String exp="";
+	    	String exp="Your email and password don't match. Please try again.";
 	    	String act=sip.verifye4();
 	    	org.junit.Assert.assertEquals(exp,act);
 	    	System.out.println("Your email and password don't match. Please try again.");
 	    	driver.switchTo().defaultContent();
-	    }
+	    }*/
 
 	    @Then("^User navigates to Account page$")
 	    public void user_navigates_to_account_page() throws Throwable {
-	    	System.out.println("1");
+	    	sp.navigateaccountpg();
 	    }
 
 	    @Then("^User navigates to retrieve password page$")
@@ -141,53 +141,29 @@ public class Sprint2_stepdefination1 {
 	    }
 
 	    @Then("^User navigates to booking webpage$")
-	    public void user_navigates_to_booking_webpage() throws Throwable {
-	    	String parent=driver.getWindowHandle();
-            Set<String> winHandles=driver.getWindowHandles();
-			for(String winHandle:winHandles) {
-				driver.switchTo().window(winHandle);
-			}
-			Thread.sleep(3000);    
+	    public void user_navigates_to_booking_webpage() throws Throwable {    
 			String s=sp.navigatestobook();
 			System.out.println(s);
 			String exp="Booking.com";
 	    	org.junit.Assert.assertEquals(exp,s);
-			driver.close();
-			driver.switchTo().window(parent);
 			Thread.sleep(3000); 
 	    }
 
 	    @Then("^User navigates to facebook webpage$")
 	    public void user_navigates_to_facebook_webpage() throws Throwable {
-	    	String parent=driver.getWindowHandle();
-            Set<String> winHandles=driver.getWindowHandles();
-			for(String winHandle:winHandles) {
-				driver.switchTo().window(winHandle);
-			}
-				Thread.sleep(3000); 
 				String s=sp.navigatestoface();
 				System.out.println(s);
 				String exp="Log in to Facebook | Facebook";
 		    	org.junit.Assert.assertEquals(exp,s);
-			driver.close();
-			driver.switchTo().window(parent);
 			Thread.sleep(3000); 
 	    }
 
 	    @Then("^User navigates to Google webpage$")
 	    public void user_navigates_to_google_webpage() throws Throwable {
-	    	String parent=driver.getWindowHandle();
-            Set<String> winHandles=driver.getWindowHandles();
-			for(String winHandle:winHandles) {
-				driver.switchTo().window(winHandle);
-			}
-			Thread.sleep(3000);
 			String s=sp.navigatestogoogle();
 			System.out.println(s);
 			String exp="Sign in – Google accounts";
 	    	org.junit.Assert.assertEquals(exp,s);
-			driver.close();
-			driver.switchTo().window(parent);
 			Thread.sleep(3000); 
 	    }
 
@@ -225,9 +201,7 @@ public class Sprint2_stepdefination1 {
 
 	    @And("^User enter valid (.+)$")
 	    public void user_enter_valid(String password) throws Throwable {
-	    	driver.findElement(By.xpath("//input[@id='Password']")).clear();
-	    	driver.findElement(By.xpath("//input[@id='Password']")).sendKeys(password);
-	    	Thread.sleep(1000);
+	    	sip.entervalidpass(password);
 	    }
 
 	    @And("^User click on Sign In1$")
@@ -247,14 +221,13 @@ public class Sprint2_stepdefination1 {
 
 	    @And("^User Enter valid and registered (.+)$")
 	    public void user_enter_valid_and_registered(String Email) throws Throwable {
-	    	driver.findElement(By.xpath("//input[@id='Email']")).clear();
-	    	driver.findElement(By.xpath("//input[@id='Email']")).sendKeys(Email);
-	    	Thread.sleep(1000);
+	    	sip.entervalidemail(Email);
 	    }
 
 	    @And("^User enters password greater than 40 characters$")
 	    public void user_enters_password_greater_than_40_characters() throws Throwable {
 	    	sip.enterpassgreater40();
+	    	
 	    }
 
 	    @And("^User enters invalid password$")

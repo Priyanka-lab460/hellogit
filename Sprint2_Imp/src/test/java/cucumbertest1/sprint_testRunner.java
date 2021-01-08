@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 features= "features/sample2.feature"      //Name of feature file
 ,glue= {"stepDefinations"}                //Name of package
-,tags= {"@tag1"}
+,tags= {"@tag2"}
 )
 public class sprint_testRunner {
 

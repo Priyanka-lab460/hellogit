@@ -35,7 +35,7 @@ Background: Open the web browser
     And User Click on Password field
     And User enters password greater than 40 characters
     And User click on Sign In1 
-    Then User verify the error message 4
+    Then User verify the error message 2
     When User click on Email field
     And User Enter valid and registered <Email>
     And User Click on Password field
@@ -43,8 +43,8 @@ Background: Open the web browser
     And User click on Sign In1 
     Then User verify the error message 2
     Examples: 
-      |Password | Email         |
-      |mnbvcxzl | aty@gmail.com |
+      |password|Email|
+      |xcvbnm,.|yut@gmail.com|
   @tag2
   Scenario Outline: Validating Account for login with valid credentials
     
@@ -56,8 +56,8 @@ Background: Open the web browser
     Then User navigates to Account page
     
     Examples: 
-      |Email              |Password | 
-      | aty@gmail.com     |mnbvcxzl |                                   
+      |Email|password| 
+      |mnc@gmail.com|lkjhgfds|                                    
     @tag3
   Scenario: Validating Forgot Password button
     
