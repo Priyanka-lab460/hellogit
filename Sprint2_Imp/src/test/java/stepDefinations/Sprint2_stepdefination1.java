@@ -178,6 +178,7 @@ public class Sprint2_stepdefination1 {
 	    	String exp="Terms of Service";
 	    	org.junit.Assert.assertEquals(exp,s);
 	    	Thread.sleep(1000);
+	    	System.out.println(s);
 	    }
 
 	  /* @Then("^User navigates to Privacy Policy webpage$")

@@ -16,7 +16,8 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 features= "features/sample2.feature"     //Name of feature file
 ,glue= {"stepDefinations"}                //Name of package
-,tags= {"@tag2"}
+//,tags= {"@tag5"}
+,plugin = {"html:cucumber_reports","junit:cucumber_reports/cucumber.xml" }
 )
 public class sprint_testRunner  extends cucumber.api.testng.AbstractTestNGCucumberTests {
 

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="6" time="347.918588">
+    <testcase classname="Sign In Validation" name="Validating Account for login with invalid credentials" time="76.446942">
+        <system-out>
+            <![CDATA[Given User click on Sign In button..........................................passed
+When User click on Email field..............................................passed
+And User Click on Password field............................................passed
+And User enter valid xcvbnm,................................................passed
+And User click on Sign In1..................................................passed
+Then User verify the error message 1........................................passed
+When User click on Email field..............................................passed
+And User Enter invalid Email................................................passed
+And User Click on Password field............................................passed
+And User enter valid xcvbnm,................................................passed
+And User click on Sign In1..................................................passed
+Then User verify the error message 2........................................passed
+When User click on Email field..............................................passed
+And User Enter valid but not registered Email...............................passed
+And User Click on Password field............................................passed
+And User enter valid xcvbnm,................................................passed
+And User click on Sign In1..................................................passed
+Then User verify the error message 2........................................passed
+When User click on Email field..............................................passed
+And User Enter valid and registered yut@gmail.com...........................passed
+And User Click on Password field............................................passed
+And User click on Sign In1..................................................passed
+Then User verify the error message 3........................................passed
+When User click on Email field..............................................passed
+And User Enter valid and registered yut@gmail.com...........................passed
+And User Click on Password field............................................passed
+And User enters password greater than 40 characters.........................passed
+And User click on Sign In1..................................................passed
+Then User verify the error message 2........................................passed
+When User click on Email field..............................................passed
+And User Enter valid and registered yut@gmail.com...........................passed
+And User Click on Password field............................................passed
+And User enters invalid password............................................passed
+And User click on Sign In1..................................................passed
+Then User verify the error message 2........................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Sign In Validation" name="Validating Account for login with valid credentials" time="61.764965">
+        <system-out>
+            <![CDATA[Given User click on Sign In button..........................................passed
+When User click on Email field..............................................passed
+And User Enter valid and registered mnc@gmail.com...........................passed
+And User Click on Password field............................................passed
+And User enter valid lkjhgfds...............................................passed
+And User click on Sign In1..................................................passed
+Then User navigates to Account page.........................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Sign In Validation" name="Validating Forgot Password button" time="48.66757">
+        <system-out>
+            <![CDATA[Given User click on Sign In button..........................................passed
+When User click on Forgot password..........................................passed
+Then User navigates to retrieve password page...............................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Sign In Validation" name="Validating Continue functionalities" time="65.698565">
+        <system-out>
+            <![CDATA[Given User click on Sign In button..........................................passed
+When User click on Continue with booking....................................passed
+Then User navigates to booking webpage......................................passed
+When User click on Continue with facebook...................................passed
+Then User navigates to facebook webpage.....................................passed
+When User click on Continue with Google.....................................passed
+Then User navigates to Google webpage.......................................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Sign In Validation" name="Validating terms of services" time="53.405759">
+        <system-out>
+            <![CDATA[Given User click on Sign In button..........................................passed
+When User click on Terms of Service.........................................passed
+Then User navigates to Terms of Service webpage.............................passed
+]]>
+        </system-out>
+    </testcase>
+    <testcase classname="Sign In Validation" name="Validating Create New Account" time="41.934787">
+        <system-out>
+            <![CDATA[Given User click on Sign In button..........................................passed
+When User click on Create New Account.......................................passed
+Then User navigates to Sign Up page.........................................passed
+]]>
+        </system-out>
+    </testcase>
+</testsuite>
