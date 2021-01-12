@@ -16,6 +16,7 @@ public class Success_Page {
 	}
 	public String navigateretpass() throws InterruptedException {
 		String s=driver.getTitle();
+		driver.navigate().back();
 		return s;
 	}
 	public String navigatestobook() throws InterruptedException {   

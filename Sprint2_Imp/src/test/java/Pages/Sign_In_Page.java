@@ -110,18 +110,22 @@ public class Sign_In_Page {
 	
 	public String verifye1() throws InterruptedException {
     	String act=driver.findElement(e1).getText();
+    	driver.switchTo().defaultContent();
     	return act;
 	}
 	public String verifye2() throws InterruptedException {
     	String act=driver.findElement(e2).getText();
+    	driver.switchTo().defaultContent();
     	return act;
 	}
 	public String verifye3() throws InterruptedException {
     	String act=driver.findElement(e3).getText();
+    	driver.switchTo().defaultContent();
     	return act;
 	}
 	/*public String verifye4() throws InterruptedException {
     	String act=driver.findElement(e4).getText();
+    	driver.switchTo().defaultContent();
     	return act;
 	}*/
 

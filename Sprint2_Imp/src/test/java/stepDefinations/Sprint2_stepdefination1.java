@@ -23,11 +23,6 @@ public class Sprint2_stepdefination1 {
 	Home_Page hp;
 	Sign_In_Page sip;
 	Success_Page sp;
-    //for git
-	@After
-	public void teardown() {
-		driver.close();
-	}
 	@Before
 	    public void setup() throws Throwable {
 			 System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
@@ -39,6 +34,10 @@ public class Sprint2_stepdefination1 {
 				sip=new Sign_In_Page(driver);
 				sp=new Success_Page(driver); 
 	    }
+	@After
+	public void teardown() {
+		driver.close();
+	}
 	 @Given("^User click on Sign In button$")
 	    public void user_click_on_sign_in_button() throws Throwable {
 		 hp.clickSignIn();
@@ -96,7 +95,7 @@ public class Sprint2_stepdefination1 {
 	    	String act=sip.verifye1();
 	    	org.junit.Assert.assertEquals(exp,act);
 	    	System.out.println(act);
-	    	driver.switchTo().defaultContent();
+	    	
 	    }
 
 	    @Then("^User verify the error message 2$")
@@ -105,7 +104,6 @@ public class Sprint2_stepdefination1 {
 	    	String act=sip.verifye2();
 	    	org.junit.Assert.assertEquals(exp,act);
 	    	System.out.println(act);
-	    	driver.switchTo().defaultContent();
 	    }
 
 	    @Then("^User verify the error message 3$")
@@ -114,7 +112,6 @@ public class Sprint2_stepdefination1 {
 	    	String act=sip.verifye3();
 	    	org.junit.Assert.assertEquals(exp,act);
 	    	System.out.println(act);
-	    	driver.switchTo().defaultContent();
 	    }
 	    /*@Then("^User verify the error message 4$")
 	    public void user_verify_the_error_message_4() throws Throwable {
@@ -136,7 +133,6 @@ public class Sprint2_stepdefination1 {
 			System.out.println(s);
 			String exp="Retrieve Password";
 	    	org.junit.Assert.assertEquals(exp,s);
-	    	driver.navigate().back();
 			
 	    }
 

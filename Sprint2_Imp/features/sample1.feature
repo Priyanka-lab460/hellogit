@@ -1,55 +1,53 @@
+
 @tag
-Feature: Title of your feature
+Feature:  Week-6 Requirements
   I want to use this template for my feature file
-
-Background: Open the web browser
-    Given User click on Sign In button
-
-
- @tag1
-  Scenario Outline: Validating Account for login with invalid credentials
-    When User click on Email field
-    And User enter <Email> 
-    And User Click on Password field
-    And User enter <Password>in step
-    And User click on Sign In1 
-    Then User verify the <error>
-
-    Examples: 
-      |Email         |Password                                     |error                                                    |
-      |              |mnbvcxzl                                     |Please enter your Email                                  |
-      |a             |mnbvcxzl                                     |Your email and password don't match. Please try again.   |
-      |auyy@gmail.com|mnbvcxzl                                     |Your email and password don't match. Please try again.   |
-      |aty@gmail.com |                                             |Please enter your password.                              |
-      |aty@gmail.com |111111111111111111111111111111111111111111111|Your email and password don't match. Please try again.   |
-      |aty@gmail.com |hgf                                          |Your email and password don't match. Please try again.   |
-  @tag2
-  Scenario: Validating Account for login with valid credentials
-    
-    When User click on Email field
-    And User Enter valid and registered Email
-    And User Click on Password field
-    And User enter valid password
-    And User click on Sign In1
-    Then User navigates to Account page
-    @tag3
-  Scenario: Validating Forgot Password button
-    
-    When User click on Forgot password
-    Then User navigates to retrieve password page
-     @tag4
-  Scenario: Validating other functionalities
-    
-    When User click on Continue with booking
-    Then User navigates to booking webpage
-    When User click on Continue with facebook
-    Then User navigates to facebook webpage
-    When User click on Continue with Google
-    Then User navigates to Google webpage
-    When User click on Create New Account
-    Then User navigates to Sign Up page
-    When User click on Terms of Service
-    Then User navigates to Terms of Service webpage
-    When User click on Privacy Policy
-    Then User navigates to Privacy Policy webpage
-    
+@tag1
+  Scenario: Open the web browser
+    Given User Open the web page in the browser
+    And User Print the title of main page
+    When User Click on the hyperlink given at last
+    Then User Verify the text on web page
+    And User Print the title for hyperlink
+    And User Go back to the previous page
+    And User Print the title of main page
+    And User Click on First Name
+    And User Click on Enquire Now!!! button
+    And User verify what the alert box display message1
+    And User Handle the Alert1
+    And User Click on First Name
+    And user Enter first Name
+    And User Click on Last Name
+    And User Click on Enquire Now!!! button
+    And User verify what the alert box display message2
+    And User Handle the Alert2
+    And User Click on Last Name
+    And user Enter Last Name
+    And User Click on Email
+    And user Enter Valid Email
+    And User Click on Mobile
+    And User Enter characters in Mobile Field
+    And User Click on Enquire Now!!! button
+    And User verify what the alert box display message3
+    And User Handle the Alert3
+    And User Click on Mobile
+    And User Enter Invalid data in Mobile Field
+    And User Click on Enquire Now!!! button
+    And User verify what the alert box display message4
+    And User Handle the Alert4
+    And User Click on Mobile
+    And user Enter Valid Mobile
+    And User Click on Category of recipes interested
+    And User Select Category of recipes interested
+    And User Click on city preference
+    And User Select Select the city preference
+     And User Click on Mode of the learning
+    And User Select Mode of the learning
+     And User Click on interested course duration
+    And User Select interested course duration
+    And User Click on Your EnquiryBox
+    And User Enter meaningful sentence, less than 10 words
+    And User Click on Enquire Now!!! button
+    And User Verify the Alert message5
+    And User Handle the Alert5
+    And User Verify the text
