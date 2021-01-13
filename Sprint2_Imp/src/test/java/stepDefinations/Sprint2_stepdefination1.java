@@ -19,13 +19,14 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class Sprint2_stepdefination1 {
-	WebDriver driver;
-	Home_Page hp;
-	Sign_In_Page sip;
-	Success_Page sp;
-	@Before
+		WebDriver driver;
+		Home_Page hp;
+		Sign_In_Page sip;
+		Success_Page sp;
+		@Before
 	    public void setup() throws Throwable {
-			 System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
+		     	//Open the Opentable website in web browser.
+			 	System.setProperty("webdriver.chrome.driver","./drivers/chromedriver.exe");
 				driver=new ChromeDriver();
 				driver.manage().window().maximize();
 				driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -34,11 +35,12 @@ public class Sprint2_stepdefination1 {
 				sip=new Sign_In_Page(driver);
 				sp=new Success_Page(driver); 
 	    }
-	@After
-	public void teardown() {
+	    @After
+	    public void teardown() {
+		//Closing the driver
 		driver.close();
-	}
-	 @Given("^User click on Sign In button$")
+		}
+		@Given("^User click on Sign In button$")
 	    public void user_click_on_sign_in_button() throws Throwable {
 		 hp.clickSignIn();
 	    }
@@ -78,17 +80,6 @@ public class Sprint2_stepdefination1 {
 	    	sip.clicktas();
 	    }
 
-	   /*@When("^User click on Privacy Policy$")
-	    public void user_click_on_privacy_policy() throws Throwable {
-	    	WebElement iframeElement = driver.findElement(By.xpath("//iframe[@title='Sign in']"));
-	    	 driver.switchTo().frame(iframeElement);
-	    	 Thread.sleep(3000);
-	    	driver.findElement(By.xpath("//a[text()='Privacy Policy']")).click();
-	    	Thread.sleep(3000);
-	    	System.out.println("11");
-	    	
-	    }*/
-
 	    @Then("^User verify the error message 1$")
 	    public void user_verify_the_error_message_1() throws Throwable {
 	    	String exp="Please enter your Email";
@@ -113,14 +104,6 @@ public class Sprint2_stepdefination1 {
 	    	org.junit.Assert.assertEquals(exp,act);
 	    	System.out.println(act);
 	    }
-	    /*@Then("^User verify the error message 4$")
-	    public void user_verify_the_error_message_4() throws Throwable {
-	    	String exp="Your email and password don't match. Please try again.";
-	    	String act=sip.verifye4();
-	    	org.junit.Assert.assertEquals(exp,act);
-	    	System.out.println("Your email and password don't match. Please try again.");
-	    	driver.switchTo().defaultContent();
-	    }*/
 
 	    @Then("^User navigates to Account page$")
 	    public void user_navigates_to_account_page() throws Throwable {
@@ -180,16 +163,6 @@ public class Sprint2_stepdefination1 {
 	    	Thread.sleep(1000);
 	    	System.out.println(s);
 	    }
-
-	  /* @Then("^User navigates to Privacy Policy webpage$")
-	    public void user_navigates_to_privacy_policy_webpage() throws Throwable {
-	    	Thread.sleep(3000);
-	    	String s=driver.findElement(By.xpath("(//span[text()='Terms of Service'])[1]")).getText();
-	    	System.out.println(s);
-	    	String exp="Privacy Check-Up";
-	    	org.junit.Assert.assertEquals(exp,s);
-	    	Thread.sleep(3000);
-	    }*/
 
 	    @And("^User Click on Password field$")
 	    public void user_click_on_password_field() throws Throwable {
